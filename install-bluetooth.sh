@@ -1,5 +1,10 @@
 #!/bin/bash -e
 
+# TODO: outside of pi, bluealsa doesn't work
+if [ "$AUDIO_RECEIVER_IS_PI" = "false" ]; then
+    exit 0;
+fi
+
 if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
 
 echo

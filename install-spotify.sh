@@ -1,6 +1,12 @@
 #!/bin/bash -e
 
 ARCH=armhf # Change to armv6 for Raspberry Pi 1/Zero
+FILE_SPOTIFY=spotifyd-linux-${ARCH}-slim.tar.gz
+
+if [ "$AUDIO_RECEIVER_IS_PI" = "false" ]; then
+  ARCH=amd64
+  FILE_SPOTIFY=spotifyd-linux-slim.tar.gz
+fi
 
 if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
 
@@ -10,7 +16,7 @@ read REPLY
 if [[ ! "$REPLY" =~ ^(yes|y|Y)$ ]]; then exit 0; fi
 
 # https://github.com/Spotifyd/spotifyd/releases/download/v0.2.24/spotifyd-linux-${ARCH}-slim.tar.gz
-tar -xvzf files/spotifyd-linux-${ARCH}-slim.tar.gz
+tar -xvzf files/${FILE_SPOTIFY}
 mkdir -p /usr/local/bin
 mv spotifyd /usr/local/bin
 

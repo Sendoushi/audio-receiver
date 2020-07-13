@@ -1,5 +1,10 @@
 #!/bin/bash -e
 
+# pi vumeter is specific to raspberry pi
+if [ "$AUDIO_RECEIVER_IS_PI" = "false" ]; then
+  exit 0
+fi
+
 if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
 
 echo
