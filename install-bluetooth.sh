@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+AUDIO_RECEIVER_IS_PI=$1
+
 # TODO: outside of pi, bluealsa doesn't work
 if [ "$AUDIO_RECEIVER_IS_PI" = "false" ]; then
     exit 0;

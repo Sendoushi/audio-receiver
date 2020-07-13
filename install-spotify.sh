@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+AUDIO_RECEIVER_IS_PI=$1
 ARCH=armhf # Change to armv6 for Raspberry Pi 1/Zero
 FILE_SPOTIFY=spotifyd-linux-${ARCH}-slim.tar.gz
 

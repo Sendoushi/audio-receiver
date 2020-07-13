@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+AUDIO_RECEIVER_IS_PI=$1
+
 # hifiberry is a soundcard specific to raspberry pi
 if [ "$AUDIO_RECEIVER_IS_PI" = "false" ]; then
   exit 0

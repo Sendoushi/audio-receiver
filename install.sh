@@ -29,11 +29,11 @@ sudo apt upgrade -y
 
 echo "Installing components"
 
-sudo ./install-bluetooth.sh
-sudo ./install-shairport.sh
-sudo ./install-spotify.sh
-sudo ./install-upnp.sh
-sudo ./install-snapcast-client.sh
-sudo ./install-pivumeter.sh
-sudo ./enable-hifiberry.sh
-sudo ./enable-read-only.sh
+sudo ./install-bluetooth.sh $AUDIO_RECEIVER_IS_PI
+sudo ./install-shairport.sh $AUDIO_RECEIVER_IS_PI
+sudo ./install-spotify.sh $AUDIO_RECEIVER_IS_PI
+sudo ./install-upnp.sh $AUDIO_RECEIVER_IS_PI
+sudo ./install-snapcast-client.sh $AUDIO_RECEIVER_IS_PI
+sudo ./install-pivumeter.sh $AUDIO_RECEIVER_IS_PI
+sudo ./enable-hifiberry.sh $AUDIO_RECEIVER_IS_PI
+sudo ./enable-read-only.sh $AUDIO_RECEIVER_IS_PI

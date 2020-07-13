@@ -1,8 +1,10 @@
 #!/bin/bash -e
 
+AUDIO_RECEIVER_IS_PI=$1
+
 if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
 
-ARCH=~bpo10+1_armhf
+ARCH=armhf
 FILE_SHAIRPORT=shairport-sync_3.3.5-1~bpo10+1_${ARCH}.deb
 
 if [ "$AUDIO_RECEIVER_IS_PI" = "false" ]; then
