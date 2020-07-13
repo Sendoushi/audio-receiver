@@ -19,11 +19,13 @@ if [[ ! "$REPLY" =~ ^(yes|y|Y)$ ]]; then exit 0; fi
 
 apt install --no-install-recommends -y avahi-daemon libavahi-client3 libconfig9 libdaemon0 libjack-jackd2-0 libmosquitto1 libpopt0 libpulse0 libsndfile1 libsoxr0
 dpkg -i files/${FILE_SHAIRPORT}
-usermod -a -G gpio shairport-sync
+
+if [ "$AUDIO_RECEIVER_IS_PI" != "false" ]; then
+  usermod -a -G gpio shairport-sync
+fi
 
 # TODO: what about this??
 if [ "$AUDIO_RECEIVER_IS_PI" != "false" ]; then
-then
   raspi-config nonint do_boot_wait 0
 fi
 
