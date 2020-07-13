@@ -6,15 +6,15 @@ echo
 echo -n "Is this a Raspberry Pi? [y/N] "
 read REPLY
 if [[ ! "$REPLY" =~ ^(yes|y|Y)$ ]]; then
-  export AUDIO_RECEIVER_IS_PI="true"
-else
   export AUDIO_RECEIVER_IS_PI="false"
+else
+  export AUDIO_RECEIVER_IS_PI="true"
 fi
 
 read -p "Hostname [$(hostname)]: " HOSTNAME
 
 if [ "$AUDIO_RECEIVER_IS_PI" = "false" ]; then
-  sudo hostnamectl set-hostname ${HOSTNAME}
+  sudo hostnamectl set-hostname ${HOSTNAME:-$(hostname)}
 else
   sudo raspi-config nonint do_hostname ${HOSTNAME:-$(hostname)}
 fi
