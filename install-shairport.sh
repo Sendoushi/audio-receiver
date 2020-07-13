@@ -8,7 +8,7 @@ ARCH=armhf
 FILE_SHAIRPORT=shairport-sync_3.3.5-1~bpo10+1_${ARCH}.deb
 
 if [ "$AUDIO_RECEIVER_IS_PI" = "false" ]; then
-  ARCH=_amd64
+  ARCH=amd64
   FILE_SHAIRPORT=shairport-sync_3.3.5-1_${ARCH}.deb
 fi
 
